@@ -1,6 +1,6 @@
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.util.Base64;
+import java.util.Base64; 
 
 public class DESExample {
 
