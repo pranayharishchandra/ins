@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+ 
 void encrypt(char message[], int shift) {
     for (int i = 0; message[i] != '\0'; ++i) {
         char ch = message[i];
