@@ -14,8 +14,17 @@ void multiply(int a[MATRIX_SIZE][MATRIX_SIZE], int b[MATRIX_SIZE], int result[MA
 }
 
 int main() {
-    int key_a[MATRIX_SIZE][MATRIX_SIZE] = {{6, 24, 1}, {13, 16, 10}, {20, 17, 15}};
-    int key_b[MATRIX_SIZE][MATRIX_SIZE] = {{8, 5, 10}, {21, 8, 21}, {21, 12, 8}};
+    // int key_a[MATRIX_SIZE][MATRIX_SIZE] = {{6, 24, 1}, {13, 16, 10}, {20, 17, 15}};
+    // int key_b[MATRIX_SIZE][MATRIX_SIZE] = {{8, 5, 10}, {21, 8, 21}, {21, 12, 8}};
+
+    int key_a[MATRIX_SIZE][MATRIX_SIZE] = {{3, 0, 0}, 
+                                           {0, 2, 0}, 
+                                           {0, 0, 1}};
+    
+    int key_b[MATRIX_SIZE][MATRIX_SIZE] = {{1, 0, 0}, 
+                                           {0, 0, 7}, 
+                                           {0, 8, 0}};
+    
     char plaintext[20];
     int encrypted[MATRIX_SIZE] = {0}, decrypted[MATRIX_SIZE] = {0};
 
