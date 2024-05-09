@@ -1,3 +1,57 @@
+#include <stdio.h>
+
+// Function to calculate (base^exp) % mod
+int power(int base, int exp, int mod) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result = (result * base) % mod;
+    }
+    return result;
+}
+
+// Function to perform RSA encryption
+int encrypt(int plaintext, int e, int n) {
+    return power(plaintext, e, n);
+}
+
+// Function to perform RSA decryption
+int decrypt(int ciphertext, int d, int n) {
+    return power(ciphertext, d, n);
+}
+
+int main() {
+    // Public and private keys
+    int p = 61; // Prime number
+    int q = 53; // Prime number
+    int n = p * q; // Modulus
+    int phi = (p - 1) * (q - 1); // Euler's totient function
+
+    // Public exponent (commonly used value)
+    int e = 17;
+
+    // Private exponent
+    int d;
+    for (d = 1; d < phi; d++) {
+        if ((d * e) % phi == 1) {
+            break;
+        }
+    }
+
+    // Plaintext message
+    int plaintext = 123;
+
+    // Encryption
+    int ciphertext = encrypt(plaintext, e, n);
+    printf("Encrypted ciphertext: %d\n", ciphertext);
+
+    // Decryption
+    int decrypted_plaintext = decrypt(ciphertext, d, n);
+    printf("Decrypted plaintext: %d\n", decrypted_plaintext);
+
+    return 0;
+}
+
+// ============================================================================================
 import java.util.Scanner;
 
 public class RSAExample {
